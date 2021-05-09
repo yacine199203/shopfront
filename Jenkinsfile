@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+    DOCKERHUB_MDP = credentials('dockerhub_id') 
+  }
   stages {
     stage('Test mvn') {
       steps {
